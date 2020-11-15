@@ -9,7 +9,7 @@ class App extends Component {
       lastName: "",
       isFriendly: false,
       gender: "",
-      favColor: "Blue"
+      favColor: ""
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -80,13 +80,12 @@ class App extends Component {
           Female
         </label>
         <br />
-        <label>Favourite Color:</label>
-        <br />
         <select
           value={this.state.favColor}
           onChange={this.handleChange}
           name="favColor"
         >
+          <option value="">-- Please select a color --</option>
           <option value="Blue">Blue</option>
           <option value="Yellow">Yellow</option>
           <option value="Red">Red</option>
