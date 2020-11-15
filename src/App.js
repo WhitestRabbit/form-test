@@ -8,7 +8,8 @@ class App extends Component {
       firstName: "",
       lastName: "",
       isFriendly: false,
-      gender: ""
+      gender: "",
+      favColor: "Blue"
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -24,9 +25,13 @@ class App extends Component {
         });
   };
 
+  handleSubmit = () => {
+    // submit form results to a database, API etc.
+  };
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="firstName"
@@ -74,12 +79,28 @@ class App extends Component {
           />{" "}
           Female
         </label>
+        <br />
+        <label>Favourite Color:</label>
+        <br />
+        <select
+          value={this.state.favColor}
+          onChange={this.handleChange}
+          name="favColor"
+        >
+          <option value="Blue">Blue</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Red">Red</option>
+          <option value="Green">Green</option>
+          <option value="Salmon">Salmon</option>
+        </select>
         <h1>
           {this.state.firstName} {this.state.lastName}
         </h1>
         <h2>
-          {this.state.gender} {this.state.isFriendly ? "Friend" : "Foe"}
+          {this.state.gender} {this.state.favColor}{" "}
+          {this.state.isFriendly ? "Friend" : "Foe"}
         </h2>
+        <button>Submit Form</button>
       </form>
     );
   }
