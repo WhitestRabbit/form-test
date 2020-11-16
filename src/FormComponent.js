@@ -1,6 +1,6 @@
 import React from "react";
 
-function FormComponent(props) {
+const FormComponent = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <input
@@ -72,6 +72,6 @@ function FormComponent(props) {
       <button>Submit Form</button>
     </form>
   );
-}
+};
 
 export default FormComponent;
